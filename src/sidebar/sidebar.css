@@ -138,3 +138,5 @@
 .gl .seg button{flex:1 1 auto;padding:0 8px}
 
 .gl .btn.primary.busy{opacity:1;background:var(--v2)}
+.gl .result span.ok{display:grid;font-size:inherit}
+.gl .fn-ex{padding:8px 9px}.gl .fn-ex code{font-size:11px;letter-spacing:-.01em}

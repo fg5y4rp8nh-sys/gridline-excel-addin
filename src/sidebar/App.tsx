@@ -147,8 +147,8 @@ function CleanPanel({ say }: { say: (t: string, undo?: () => void) => void }) {
 /* ---------------- Formulas ---------------- */
 const FUNCS = [
   { name: 'FX', sig: '=GRIDLINE_FX(from, to)', text: 'Live exchange rate between two currencies.', ex: '=GRIDLINE_FX("USD","EUR")' },
-  { name: 'PRICE', sig: '=GRIDLINE_PRICE(sku, [qty])', text: 'List price from your product catalogue.', ex: '=GRIDLINE_PRICE("GL-TEAM",3)' },
-  { name: 'DEAL', sig: '=GRIDLINE_DEAL(id, field)', text: 'Any field of a CRM deal, always up to date.', ex: '=GRIDLINE_DEAL("D-1048","stage")' }
+  { name: 'PRICE', sig: '=GRIDLINE_PRICE(sku, [qty])', text: 'List price from your product catalogue.', ex: '=GRIDLINE_PRICE("GL-TEAM")' },
+  { name: 'DEAL', sig: '=GRIDLINE_DEAL(id, field)', text: 'Any field of a CRM deal, always up to date.', ex: '=GRIDLINE_DEAL(A8,"stage")' }
 ];
 function FormulasPanel({ say }: { say: (t: string) => void }) {
   const [busy, setBusy] = useState(false);

@@ -1,4 +1,4 @@
-Licence — Gridline Excel Add-in
+Licence — Gridline Google Sheets Add-on
 
 You may:
 - use this template in unlimited personal and commercial projects, including work for clients;
