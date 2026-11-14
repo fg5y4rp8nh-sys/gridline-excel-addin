@@ -53,6 +53,15 @@ function norm_(rows) {
   const tz = SpreadsheetApp.getActive().getSpreadsheetTimeZone();
   return rows.map(r => r.map(v => v instanceof Date ? Utilities.formatDate(v, tz, 'yyyy-MM-dd') : v));
 }
+/**
+ * setFormula() parses formulas in the spreadsheet's locale. Locales with a decimal comma (ru, de, fr…)
+ * separate arguments with ";" — so we swap the separators outside of string literals.
+ */
+function localFormula_(f) {
+  const loc = SpreadsheetApp.getActive().getSpreadsheetLocale();
+  if (/^(en|ja|zh|ko|he|th|hi|ms|fil|ga|cy)/.test(loc)) return f;
+  return f.replace(/("[^"]*")|,/g, (m, str) => str || ';');
+}
 function styleHeader_(range) { range.setFontWeight('bold').setBackground(HEAD_BG).setFontColor(HEAD_FG); }
 
 function writeTable(header, rows, opts) {
@@ -95,7 +104,7 @@ function writeColumn(colIndex, header, formulas, numberFormat) {
   const sh = SpreadsheetApp.getActiveSheet();
   styleHeader_(sh.getRange(1, colIndex + 1).setValue(header));
   const body = sh.getRange(2, colIndex + 1, formulas.length, 1);
-  body.setFormulas(formulas.map(f => [f])).setNumberFormat(numberFormat || '#,##0').setHorizontalAlignment('right');
+  body.setFormulas(formulas.map(f => [localFormula_(f)])).setNumberFormat(numberFormat || '#,##0').setHorizontalAlignment('right');
   sh.getRange(1, colIndex + 1).setHorizontalAlignment('right');
   sh.autoResizeColumn(colIndex + 1);
   sh.setColumnWidth(colIndex + 1, Math.max(sh.getColumnWidth(colIndex + 1) + 14, 110));
@@ -103,7 +112,7 @@ function writeColumn(colIndex, header, formulas, numberFormat) {
 
 function writeCell(formula) {
   const cell = SpreadsheetApp.getActiveRange().getCell(1, 1);
-  cell.setFormula(formula);
+  cell.setFormula(localFormula_(formula));
   return cell.getA1Notation();
 }
 

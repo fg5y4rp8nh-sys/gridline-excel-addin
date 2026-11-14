@@ -136,3 +136,5 @@
 @media (prefers-reduced-motion:reduce){.gl *{animation:none!important;transition:none!important}}
 .gl .fn-ex .link{flex-shrink:0;white-space:nowrap}
 .gl .seg button{flex:1 1 auto;padding:0 8px}
+
+.gl .btn.primary.busy{opacity:1;background:var(--v2)}
