@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Gridline — Excel add-in manifest (add-in only XML manifest).
-     Generated for https://fg5y4rp8nh-sys.github.io/gridline-excel-addin. For production point every URL at your own HTTPS host. -->
+     Generated for https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs. For production point every URL at your own HTTPS host. -->
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
@@ -12,8 +12,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Gridline"/>
   <Description DefaultValue="Import CRM deals into Excel, clean the data, use live custom functions, create PDF invoices and push edits back to the CRM."/>
-  <IconUrl DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/icon-64.png"/>
+  <IconUrl DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/icon-64.png"/>
   <SupportUrl DefaultValue="https://www.your-company.com/support"/>
   <AppDomains>
     <AppDomain>https://api.your-crm.com</AppDomain>
@@ -28,7 +28,7 @@
     </Sets>
   </Requirements>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/taskpane/taskpane.html"/>
+    <SourceLocation DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/taskpane/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -117,36 +117,36 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/icon-16.png"/>
-        <bt:Image id="Icon.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/icon-32.png"/>
-        <bt:Image id="Icon.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/icon-80.png"/>
-        <bt:Image id="I.open.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/open-16.png"/>
-        <bt:Image id="I.open.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/open-32.png"/>
-        <bt:Image id="I.open.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/open-80.png"/>
-        <bt:Image id="I.import.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/import-16.png"/>
-        <bt:Image id="I.import.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/import-32.png"/>
-        <bt:Image id="I.import.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/import-80.png"/>
-        <bt:Image id="I.clean.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/clean-16.png"/>
-        <bt:Image id="I.clean.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/clean-32.png"/>
-        <bt:Image id="I.clean.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/clean-80.png"/>
-        <bt:Image id="I.fx.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/fx-16.png"/>
-        <bt:Image id="I.fx.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/fx-32.png"/>
-        <bt:Image id="I.fx.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/fx-80.png"/>
-        <bt:Image id="I.quick.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/quick-16.png"/>
-        <bt:Image id="I.quick.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/quick-32.png"/>
-        <bt:Image id="I.quick.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/quick-80.png"/>
-        <bt:Image id="I.invoice.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/invoice-16.png"/>
-        <bt:Image id="I.invoice.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/invoice-32.png"/>
-        <bt:Image id="I.invoice.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/invoice-80.png"/>
-        <bt:Image id="I.sync.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/sync-16.png"/>
-        <bt:Image id="I.sync.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/sync-32.png"/>
-        <bt:Image id="I.sync.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/sync-80.png"/>
+        <bt:Image id="Icon.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/icon-16.png"/>
+        <bt:Image id="Icon.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/icon-32.png"/>
+        <bt:Image id="Icon.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/icon-80.png"/>
+        <bt:Image id="I.open.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/open-16.png"/>
+        <bt:Image id="I.open.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/open-32.png"/>
+        <bt:Image id="I.open.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/open-80.png"/>
+        <bt:Image id="I.import.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/import-16.png"/>
+        <bt:Image id="I.import.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/import-32.png"/>
+        <bt:Image id="I.import.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/import-80.png"/>
+        <bt:Image id="I.clean.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/clean-16.png"/>
+        <bt:Image id="I.clean.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/clean-32.png"/>
+        <bt:Image id="I.clean.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/clean-80.png"/>
+        <bt:Image id="I.fx.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/fx-16.png"/>
+        <bt:Image id="I.fx.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/fx-32.png"/>
+        <bt:Image id="I.fx.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/fx-80.png"/>
+        <bt:Image id="I.quick.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/quick-16.png"/>
+        <bt:Image id="I.quick.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/quick-32.png"/>
+        <bt:Image id="I.quick.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/quick-80.png"/>
+        <bt:Image id="I.invoice.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/invoice-16.png"/>
+        <bt:Image id="I.invoice.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/invoice-32.png"/>
+        <bt:Image id="I.invoice.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/invoice-80.png"/>
+        <bt:Image id="I.sync.16" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/sync-16.png"/>
+        <bt:Image id="I.sync.32" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/sync-32.png"/>
+        <bt:Image id="I.sync.80" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/sync-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Functions.Script" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/assets/taskpane.js"/>
-        <bt:Url id="Functions.Metadata" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/functions.json"/>
+        <bt:Url id="Functions.Script" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/assets/taskpane.js"/>
+        <bt:Url id="Functions.Metadata" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/functions.json"/>
         <bt:Url id="GetStarted.LearnMore" DefaultValue="https://www.your-company.com/gridline"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/taskpane/taskpane.html"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://fg5y4rp8nh-sys.github.io/gridline-excel-addin/docs/taskpane/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="Functions.Namespace" DefaultValue="GRIDLINE"/>
