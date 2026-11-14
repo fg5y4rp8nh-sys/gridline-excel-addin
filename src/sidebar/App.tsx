@@ -160,7 +160,7 @@ function FormulasPanel({ say }: { say: (t: string) => void }) {
     const at = H.indexOf('Amount (EUR)') >= 0 ? H.indexOf('Amount (EUR)') : H.length;
     const f = b.values.slice(1).map((_, i) => `=${colLetter(a)}${i + 2}*GRIDLINE_FX(${colLetter(c)}${i + 2},"EUR")`);
     await writeColumn(at, 'Amount (EUR)', f);
-    await selectRange(`${colLetter(at)}2:${colLetter(at)}${f.length + 1}`);
+    await selectRange(`${colLetter(at)}2`);
     setBusy(false); say(`Amount (EUR) added to column ${colLetter(at)}`);
   }
   return <>
