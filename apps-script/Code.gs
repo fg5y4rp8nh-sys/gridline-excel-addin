@@ -81,8 +81,11 @@ function writeTable(header, rows, opts) {
   styleHeader_(sh.getRange(1, 1, 1, m));
   if (iAmt >= 0) sh.getRange(1, iAmt + 1, n + 1, 1).setHorizontalAlignment('right');
   sh.setFrozenRows(1);
-  sh.autoResizeColumns(1, m);
-  for (let c = 1; c <= m; c++) sh.setColumnWidth(c, sh.getColumnWidth(c) + 14);
+  // Width from the longest value (autoResizeColumns under-sizes on first render)
+  header.forEach((h, c) => {
+    const longest = [h].concat(rows.map(r => String(r[c] == null ? '' : r[c]))).reduce((a, v) => Math.max(a, v.length), 0);
+    sh.setColumnWidth(c + 1, Math.min(Math.max(Math.round(longest * 7.4) + 26, 64), 280));
+  });
   return all.getA1Notation();
 }
 
@@ -106,8 +109,7 @@ function writeColumn(colIndex, header, formulas, numberFormat) {
   const body = sh.getRange(2, colIndex + 1, formulas.length, 1);
   body.setFormulas(formulas.map(f => [localFormula_(f)])).setNumberFormat(numberFormat || '#,##0').setHorizontalAlignment('right');
   sh.getRange(1, colIndex + 1).setHorizontalAlignment('right');
-  sh.autoResizeColumn(colIndex + 1);
-  sh.setColumnWidth(colIndex + 1, Math.max(sh.getColumnWidth(colIndex + 1) + 14, 110));
+  sh.setColumnWidth(colIndex + 1, Math.max(Math.round(header.length * 7.4) + 30, 110));
 }
 
 function writeCell(formula) {
