@@ -22,7 +22,7 @@ export function scan(values: Row[]): Issue[] {
   const out: Record<IssueKind, Issue> = {
     duplicates: { kind: 'duplicates', title: 'Duplicate rows', hint: 'Same deal ID appears more than once', cells: [], rows: [] },
     spaces: { kind: 'spaces', title: 'Extra spaces', hint: 'Leading, trailing or double spaces', cells: [], rows: [] },
-    names: { kind: 'names', title: 'Name capitalisation', hint: 'e.g. “ethan brooks” → “Ethan Brooks”', cells: [], rows: [] },
+    names: { kind: 'names', title: 'Name capitalisation', hint: 'e.g. “ethan\u00a0brooks” → “Ethan\u00a0Brooks”', cells: [], rows: [] },
     phones: { kind: 'phones', title: 'Phone formats', hint: 'Mixed formats → +1\u00a0(415)\u00a0555\u20110132', cells: [], rows: [] },
     emails: { kind: 'emails', title: 'Email case', hint: 'Upper-case letters in addresses', cells: [], rows: [] }
   };

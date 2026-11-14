@@ -131,7 +131,7 @@ var GL = (() => {
     const out = {
       duplicates: { kind: "duplicates", title: "Duplicate rows", hint: "Same deal ID appears more than once", cells: [], rows: [] },
       spaces: { kind: "spaces", title: "Extra spaces", hint: "Leading, trailing or double spaces", cells: [], rows: [] },
-      names: { kind: "names", title: "Name capitalisation", hint: "e.g. \u201Cethan brooks\u201D \u2192 \u201CEthan Brooks\u201D", cells: [], rows: [] },
+      names: { kind: "names", title: "Name capitalisation", hint: "e.g. \u201Cethan\xA0brooks\u201D \u2192 \u201CEthan\xA0Brooks\u201D", cells: [], rows: [] },
       phones: { kind: "phones", title: "Phone formats", hint: "Mixed formats \u2192 +1\xA0(415)\xA0555\u20110132", cells: [], rows: [] },
       emails: { kind: "emails", title: "Email case", hint: "Upper-case letters in addresses", cells: [], rows: [] }
     };
