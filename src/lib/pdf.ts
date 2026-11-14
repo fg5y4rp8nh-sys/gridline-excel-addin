@@ -1,3 +1,4 @@
+import { call } from './gas';
 // Builds an invoice PDF in the browser with jsPDF (MIT). Layout is plain and easy to restyle.
 import { jsPDF } from 'jspdf';
 
@@ -33,11 +34,12 @@ export function invoicePdf(inv: Invoice): Blob {
   });
   p.line(L, y, R, y); y += 26;
   p.setFont('helvetica', 'bold'); p.setFontSize(13); ink(); p.text('Total', R - 170, y); p.text(money(total, inv.currency), R, y, { align: 'right' });
-  p.setFont('helvetica', 'normal'); p.setFontSize(8.5); mute(); p.text('Generated in Excel with Gridline', L, 800);
+  p.setFont('helvetica', 'normal'); p.setFontSize(8.5); mute(); p.text('Generated in Google Sheets with Gridline', L, 800);
   return p.output('blob');
 }
 
-export function download(blob: Blob, name: string) {
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+/** Save the PDF to the "Gridline invoices" folder in the user's Google Drive. Returns the file URL. */
+export async function saveToDrive(blob: Blob, name: string): Promise<string> {
+  const b64 = await new Promise<string>((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result).split(',')[1]); r.onerror = rej; r.readAsDataURL(blob); });
+  return call<string>('savePdf', name, b64);
 }

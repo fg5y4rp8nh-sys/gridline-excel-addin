@@ -1,18 +1,16 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
 import { resolve } from 'node:path';
 
-// Office add-ins must be served over HTTPS. `npm run dev` uses the dev certs from office-addin-dev-certs if present.
+// The sidebar is built as one IIFE script. React, ReactDOM and jsPDF load from a CDN in Sidebar.html,
+// which keeps the Apps Script file small. JSX uses the classic React.createElement transform for the same reason.
 export default defineConfig({
-  root: 'src',
-  base: './',   // relative URLs, so dist/ works from any folder (GitHub Pages, Azure, Vercel…)
-  publicDir: resolve(__dirname, 'public'),
-  plugins: [react()],
-  server: { port: 3000, https: undefined },
+  esbuild: { jsx: 'transform', jsxFactory: 'React.createElement', jsxFragment: 'React.Fragment' },
   build: {
-    outDir: resolve(__dirname, 'dist'), emptyOutDir: true,
-    rollupOptions: { output: { entryFileNames: 'assets/[name].js' }, input: {
-      taskpane: resolve(__dirname, 'src/taskpane/taskpane.html')
-    } }
+    outDir: 'build', emptyOutDir: true, cssCodeSplit: false, minify: true,
+    lib: { entry: resolve(__dirname, 'src/sidebar/main.tsx'), name: 'Gridline', formats: ['iife'], fileName: () => 'sidebar.js' },
+    rollupOptions: {
+      external: ['react', 'react-dom/client', 'jspdf'],
+      output: { globals: { react: 'React', 'react-dom/client': 'ReactDOM', jspdf: 'jspdf' }, assetFileNames: 'sidebar.[ext]' }
+    }
   }
 });

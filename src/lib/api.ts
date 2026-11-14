@@ -1,5 +1,7 @@
 // CRM API client. Point it at your own REST API in Settings, or keep "Demo CRM" to try the add-in.
 import { DEMO_DEALS, Deal } from './data';
+import { call } from './gas';
+import { store } from './store';
 
 export interface Settings { baseUrl: string; apiKey: string; demo: boolean; }
 export interface DealQuery { stages: string[]; owner: string; }
@@ -7,20 +9,16 @@ export interface Change { id: string; field: string; from: string | number; to: 
 
 const KEY = 'gridline-settings';
 export const loadSettings = (): Settings => {
-  try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) return s; } catch { /* ignore */ }
+  try { const s = JSON.parse(store.get(KEY) || 'null'); if (s) return s; } catch { /* ignore */ }
   return { baseUrl: 'https://api.your-crm.com/v1', apiKey: '', demo: true };
 };
-export const saveSettings = (s: Settings) => { try { localStorage.setItem(KEY, JSON.stringify(s)); } catch { /* ignore */ } };
+export const saveSettings = (s: Settings) => { try { store.set(KEY, JSON.stringify(s)); } catch { /* ignore */ } };
 
 const wait = (ms: number) => new Promise(r => setTimeout(r, ms));
 
-async function http<T>(s: Settings, path: string, init?: RequestInit): Promise<T> {
-  const res = await fetch(s.baseUrl.replace(/\/$/, '') + path, {
-    ...init,
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${s.apiKey}`, ...(init?.headers || {}) }
-  });
-  if (!res.ok) throw new Error(`CRM responded ${res.status} ${res.statusText}`);
-  return res.json() as Promise<T>;
+/** Real CRM calls go through Code.gs (UrlFetchApp), so the API key never reaches the browser and CORS is not an issue. */
+async function http<T>(s: Settings, path: string, init?: { method?: string; body?: string }): Promise<T> {
+  return call<T>('crmFetch', s.baseUrl, s.apiKey, path, init?.method || 'GET', init?.body || null);
 }
 
 /** GET /deals?stage=…&owner=… → Deal[] */
