@@ -84,7 +84,7 @@ function writeTable(header, rows, opts) {
   // Width from the longest value (autoResizeColumns under-sizes on first render)
   header.forEach((h, c) => {
     const longest = [h].concat(rows.map(r => String(r[c] == null ? '' : r[c]))).reduce((a, v) => Math.max(a, v.length), 0);
-    sh.setColumnWidth(c + 1, Math.min(Math.max(Math.round(longest * 7.4) + 26, 64), 280));
+    sh.setColumnWidth(c + 1, Math.min(Math.max(Math.round(longest * 6.7) + 22, 60), 260));
   });
   return all.getA1Notation();
 }
