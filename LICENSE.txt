@@ -1,0 +1,14 @@
+Licence — Gridline Excel Add-in
+
+You may:
+- use this template in unlimited personal and commercial projects, including work for clients;
+- change it as much as you like;
+- ship it inside a website or app that you or your client sells or runs.
+
+You may not:
+- resell, give away or share the source files, changed or not, as a template, theme,
+  UI kit or component library of your own;
+- upload the source to a public repository or a template marketplace.
+
+The licence is permanent and worldwide and belongs to the person or company that bought it.
+The software is provided "as is", without warranty of any kind.
